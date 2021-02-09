@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import materialsRoutes from './routes/materials/materials.routes'
 import materialsCategoriesRoutes from './routes/materials/materials-categories.routes'
 import galleryRoutes from './routes/gallery/gallery.routes'
+import newsRoutes from './routes/news/news.routes'
 import { connect } from './helpers/mongodb.helpers'
 
 dotenv.config()
@@ -24,6 +25,7 @@ app.use((_, res, next) => {
 app.use('/', materialsCategoriesRoutes)
 app.use('/', materialsRoutes)
 app.use('/', galleryRoutes)
+app.use('/', newsRoutes)
 
 app.listen(PORT, async () => {
   await connect()
